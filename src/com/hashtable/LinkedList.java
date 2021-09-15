@@ -36,7 +36,7 @@ public class LinkedList<K> {
 	}
 	
 	
-	public String print() {
+	public String toString() {
 		return "My Nodes: "+head;
 	}
 }
