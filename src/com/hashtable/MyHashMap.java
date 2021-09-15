@@ -24,7 +24,7 @@ public class MyHashMap<K,V> {
 
 	@Override
 	public String toString() {
-		return "MyHashMap {" + linkedList.print() + "}";
+		return "MyHashMap {" + linkedList.toString() + "}";
 	}
 	
 	
