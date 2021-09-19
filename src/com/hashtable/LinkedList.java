@@ -35,6 +35,33 @@ public class LinkedList<K> {
 		return null;
 	}
 	
+	public boolean remove(INode<K> key) {
+		INode<K> temp = head;
+		INode<K> prev = null;
+		boolean isFound = false;
+		if(temp != null && temp.getKey() == key.getKey()) {
+			head = temp.getNext();
+			return true;
+			
+		}
+		while(temp != null) {
+			if(temp.getKey().equals(key.getKey())) {
+				isFound = true;
+				break;
+			}
+			prev = temp;
+			temp = temp.getNext();
+		}
+		if(isFound) {
+			prev.setNext(temp.getNext());
+			return isFound;
+		}
+		else {
+			System.out.println("Not found!!");
+			return isFound;
+		}
+	}
+	
 	
 	public String toString() {
 		return "My Nodes: "+head;
