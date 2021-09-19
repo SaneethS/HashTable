@@ -38,6 +38,26 @@ public class MyLinkedHashMap<K,V> {
 		}
 	}
 	
+	public void remove(K key) {
+		int index=this.getBucketIndex(key); 
+		LinkedList<K> linkedList = this.bucketArray.get(index);
+
+		if (linkedList == null){
+			System.out.println("Element not found");
+			return;
+		}else {
+			MapNode<K, V> mapNode = (MapNode<K,V>) linkedList.search(key);
+			if (mapNode == null)
+			{ 
+				System.out.println("Key value not found!!");
+			} else {
+				linkedList.remove(mapNode);
+				System.out.println(key+" is removed!!");
+				return;
+			}
+		}
+	}
+	
 	public V get(K key) {
 		int index = this.getBucketIndex(key);
 		LinkedList<K> linkedList = this.bucketArray.get(index);
